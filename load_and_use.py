@@ -69,11 +69,12 @@ def predict_sentiment(texts):
     return probs.flatten(), labels.flatten()
 
 if __name__ == "__main__":
-    samples = [
-        "I absolutely loved this movie—stellar acting and a great plot!",
-        "Terrible. It was a waste of time, I almost fell asleep.",
-        "An average film: some parts were good but overall forgettable."
-    ]
+    # samples = [
+    #     "I absolutely loved this movie—stellar acting and a great plot!",
+    #     "Terrible. It was a waste of time, I almost fell asleep.",
+    #     "An average film: some parts were good but overall forgettable."
+    # ]
+    samples = input("Enter reviews separated by commas: ").split(",")
 
     probs, preds = predict_sentiment(samples)
     for text, p, lbl in zip(samples, probs, preds):
